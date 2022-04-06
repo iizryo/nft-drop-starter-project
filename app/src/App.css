@@ -148,3 +148,16 @@
     background-position: 0% 50%;
   }
 }
+
+.rotate_animation {
+  animation: move-y 0.5s infinite alternate ease-in-out;
+  display: inline-block;
+}
+@keyframes move-y {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-10px);
+  }
+}

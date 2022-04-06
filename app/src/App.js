@@ -82,7 +82,9 @@ const App = () => {
     <div className="App">
       <div className="container">
         <div className="header-container">
-          <p className="header">🍺 Beer Drop</p>
+          <p className="header">
+            <span className="rotate_animation">🍺</span> Beer Drop
+          </p>
           <p className="sub-text">Which beer do you like?</p>
           {!walletAddress && renderNotConnectedContainer()}
         </div>
