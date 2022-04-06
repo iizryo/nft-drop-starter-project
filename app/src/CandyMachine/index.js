@@ -13,6 +13,7 @@ import {
   getNetworkToken,
   CIVIC,
 } from "./helpers";
+import CountdownTimer from "../CountdownTimer";
 
 const { SystemProgram } = web3;
 const opts = {
@@ -80,6 +81,8 @@ const CandyMachine = ({ walletAddress }) => {
 
   const mintToken = async () => {
     const mint = web3.Keypair.generate();
+
+    if (!mint || !candyMachine?.state) return;
 
     const userTokenAccountAddress = (await getAtaForMint(mint.publicKey, walletAddress.publicKey))[0];
 
@@ -329,15 +332,40 @@ const CandyMachine = ({ walletAddress }) => {
     getCandyMachineState();
   }, []);
 
-  return candyMachine ? (
-    <div className="machine-container">
-      <p>{`Drop Date: ${candyMachine.state.goLiveDateTimeString}`}</p>
-      <p>{`Items Minted: ${candyMachine.state.itemsRedeemed} / ${candyMachine.state.itemsAvailable}`}</p>
-      <button className="cta-button mint-button" onClick={null}>
-        Mint NFT
-      </button>
-    </div>
-  ) : null;
+  // レンダリング関数を作成します
+  const renderDropTimer = () => {
+    // JavaScriptのDateオブジェクトで現在の日付とDropDateを取得します
+    const currentDate = new Date();
+    const dropDate = new Date(candyMachine.state.goLiveData * 1000);
+
+    //もし現在の日時がドロップ日よりも前の場合、カウントダウンコンポーネントをレンダリングします
+    if (currentDate < dropDate) {
+      console.log("Before drop date!");
+      // CountdownTimer コンポーネントを返します
+      return <CountdownTimer dropDate={dropDate} />;
+    }
+
+    // 条件に満たない場合はドロップ日のみを返します
+    return <p>{`Drop Date: ${candyMachine.state.goLiveDateTimeString}`}</p>;
+  };
+
+  return (
+    candyMachine &&
+    candyMachine.state && (
+      <div className="machine-container">
+        {renderDropTimer()}
+        <p>{`Items Minted: ${candyMachine.state.itemsRedeemed} / ${candyMachine.state.itemsAvailable}`}</p>
+        {/* プロパティが等しいかチェックします */}
+        {candyMachine.state.itemsRedeemed === candyMachine.state.itemsAvailable ? (
+          <p className="sub-text">Sold Out 🙊</p>
+        ) : (
+          <button className="cta-button mint-button" onClick={mintToken}>
+            Mint NFT
+          </button>
+        )}
+      </div>
+    )
+  );
 };
 
 export default CandyMachine;

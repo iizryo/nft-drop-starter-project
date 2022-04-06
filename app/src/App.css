@@ -1,6 +1,6 @@
 .App {
   height: 100vh;
-  background-color: rgb(20, 20, 20);
+  background-color: #2e2a24;
   overflow: scroll;
   text-align: center;
   overflow: hidden;
@@ -12,7 +12,7 @@
   flex-direction: column;
   justify-content: center;
   padding: 0 30px 0 30px;
-  color: white;
+  color: #f9d094;
   position: relative;
   /* background-color: #35aee2; */
 }
@@ -48,7 +48,7 @@
 .cta-button {
   height: 45px;
   border: 0;
-  width: auto;
+  width: 50%;
   padding-left: 40px;
   padding-right: 40px;
   border-radius: 10px;
@@ -58,17 +58,23 @@
 }
 
 .connect-wallet-button {
-  color: white;
-  background: -webkit-linear-gradient(left, #ff8867, #ff52ff);
-  background-size: 200% 200%;
+  /* background: -webkit-linear-gradient(left, #ff8867, #ff52ff); */
+  /* background-size: 200% 200%; */
+  background: #f9d094;
+  color: #2e2a24;
+  border-radius: 50px;
   animation: gradient-animation 4s ease infinite;
+  border-radius: 50px;
 }
 
 .mint-button {
-  background: -webkit-linear-gradient(left, #4e44ce, #35aee2);
-  background-size: 200% 200%;
+  /* background: -webkit-linear-gradient(left, #4e44ce, #35aee2); */
+  /* background-size: 200% 200%; */
+  background: #f9d094;
+  color: #2e2a24;
+  border-radius: 50px;
+  align-self: center;
   animation: gradient-animation 4s ease infinite;
-  margin-left: 10px;
 }
 
 .footer-container {
@@ -93,7 +99,7 @@
   color: white;
 }
 
-.connected-container input[type='text'] {
+.connected-container input[type="text"] {
   display: inline-block;
   padding: 10px;
   width: 50%;
