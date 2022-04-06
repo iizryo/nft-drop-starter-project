@@ -1,0 +1,19 @@
+{
+  "name": "Beer",
+  "symbol": "",
+  "image": "7.png",
+  "properties": {
+    "files": [
+      {
+        "uri": "7.png",
+        "type": "image/png"
+      }
+    ],
+    "creators": [
+      {
+        "address": "4PvQE6GBxJb8C1vsnFrebiAAodV9XUbVAvgY6KuqDqRX",
+        "share": 100
+      }
+    ]
+  }
+}

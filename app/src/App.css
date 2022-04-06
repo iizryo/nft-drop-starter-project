@@ -48,7 +48,7 @@
 .cta-button {
   height: 45px;
   border: 0;
-  width: 50%;
+  width: 350px;
   padding-left: 40px;
   padding-right: 40px;
   border-radius: 10px;
@@ -58,20 +58,18 @@
 }
 
 .connect-wallet-button {
-  /* background: -webkit-linear-gradient(left, #ff8867, #ff52ff); */
-  /* background-size: 200% 200%; */
-  background: #f9d094;
-  color: #2e2a24;
+  background: rgba(162, 107, 20, 0.3);
+  -webkit-box-shadow: 0 0 5px rgb(0 0 0 / 40%);
+  color: #be862d;
   border-radius: 50px;
   animation: gradient-animation 4s ease infinite;
   border-radius: 50px;
 }
 
 .mint-button {
-  /* background: -webkit-linear-gradient(left, #4e44ce, #35aee2); */
-  /* background-size: 200% 200%; */
-  background: #f9d094;
-  color: #2e2a24;
+  background: rgba(162, 107, 20, 0.3);
+  -webkit-box-shadow: 0 0 5px rgb(0 0 0 / 40%);
+  color: #be862d;
   border-radius: 50px;
   align-self: center;
   animation: gradient-animation 4s ease infinite;
@@ -96,7 +94,7 @@
 .footer-text {
   font-size: 16px;
   font-weight: bold;
-  color: white;
+  color: #f9d094;
 }
 
 .connected-container input[type="text"] {

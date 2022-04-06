@@ -83,7 +83,7 @@ const App = () => {
       <div className="container">
         <div className="header-container">
           <p className="header">🍺 Beer Drop</p>
-          <p className="sub-text">NFT drop machine with fair mint</p>
+          <p className="sub-text">Which beer do you like?</p>
           {!walletAddress && renderNotConnectedContainer()}
         </div>
         {/* walletAddressを確認してから、walletAddressを渡します*/}
